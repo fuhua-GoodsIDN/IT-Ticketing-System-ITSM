@@ -1,17 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>IT Ticketing System HelpDesk & IT Service Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="./favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Ticketing System — HelpDesk &amp; ITSM</title>
   <style>
-    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-    iframe { width: 100%; height: 100%; border: none; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #020617;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #app-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #cbd5e1;
+      font-size: 14px;
+      background: #020617;
+      z-index: 10;
+      transition: opacity 0.25s ease;
+    }
+    .spinner {
+      width: 34px;
+      height: 34px;
+      border: 3px solid rgba(26, 179, 148, 0.25);
+      border-top-color: #1AB394;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    iframe#gas-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <iframe        
-   src="https://script.google.com/macros/s/AKfycbyaOLRhW0nMOAz0z3r0L7vBwKmQFFReQdif1KYXmGt1VOZGreLjNxCg2XEa_Ec1iPMG/exec" 
-      title="IT Ticketing System HelpDesk & IT Service Management"></iframe>
+  <div id="app-loader">
+    <div class="spinner"></div>
+    <span>Memuat IT Ticketing System...</span>
+  </div>
+
+  <iframe
+    id="gas-frame"
+    src="https://script.google.com/macros/s/AKfycbyaOLRhW0nMOAz0z3r0L7vBwKmQFFReQdif1KYXmGt1VOZGreLjNxCg2XEa_Ec1iPMG/exec"
+    title="IT Ticketing System HelpDesk"
+    allow="clipboard-read; clipboard-write"
+    allowfullscreen
+    onload="var l=document.getElementById('app-loader'); if(l){l.style.opacity='0'; setTimeout(function(){l.remove();},260);}"
+  ></iframe>
 </body>
 </html>
